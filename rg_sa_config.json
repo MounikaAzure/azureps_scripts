@@ -1,0 +1,33 @@
+{
+   "rgName":"devRG",
+   "rgLocation":"East US",
+   "saName":"uniquresaname",
+   "saLocation":"East US",
+   "containers":[
+      {
+         "containername":"container1",
+         "permission":"off",
+         "blobs":[
+            {
+               "blobName":"rose.jsg",
+               "filePath":"C:/location"
+            },
+            {
+               "blobName":"rose.jsg",
+               "filePath":"C:/location"
+            }
+         ]
+      },
+      {
+         "containername":"container2",
+         "permission":"public",
+         "blobs":[
+            
+         ]
+      },
+      {
+         "containername":"container3",
+         "permission":"blob"
+      }
+   ]
+}
