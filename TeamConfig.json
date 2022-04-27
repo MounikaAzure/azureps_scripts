@@ -1,0 +1,56 @@
+{
+    "Storagearray": [
+        {
+            "teamname": "Operations",
+            "rgname": "Operationrg",
+            "location": "East US",
+            "storageaccname": "opsstorage2022",
+            "sku": "Standard_LRS",
+            "description": "Configuration for Operation Team",
+            "Container": [
+                {
+                    "name": "Opscontainer1",
+                    "Permission": "Off"
+                },
+                {
+                    "name": "Opscontainer2",
+                    "Permission": "Off"
+                }
+            ]
+        },
+        {
+            "teamname": "Technical",
+            "rgname": "Technicalrg",
+            "location": "West US",
+            "storageaccname": "tecstorage2022",
+            "sku": "Standard_LRS",
+            "description": "Configuration for Technical Team",
+            "Container": [
+                {
+                    "name": "Techcontainer1",
+                    "Permission": "Off"
+                },
+                {
+                    "name": "Techcontainer2",
+                    "Permission": "Off"
+                }
+            ]
+        },
+        {
+            "teamname": "BPRG",
+            "rgname": "BPRGrg",
+            "location": "East US",
+            "storageaccname": "bprgstorage2022",
+            "sku": "Standard_LRS",
+            "description": "Configuration for Bprg Team",
+            "Container": [
+                {
+                    "name": "Bprgcontainer1",
+                    "Permission": "Off"
+                }
+            ]
+        }
+    ]
+}
+
+

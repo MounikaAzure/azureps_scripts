@@ -1,0 +1,106 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageaccountname": 
+        {
+            "type": "string",
+            "metadata": {
+                "description": "devstorage"
+            }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "storagelocation"
+            }
+        },
+        "sku": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        } ,
+        "vnet_Name": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "vnet_address_space": {
+            "type": "string",
+            "defaultValue":"10.3.0.0/16",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "subnet1": {
+            "type": "string",
+            "defaultValue":"10.3.0.0/24",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "subnet2": {
+            "type": "string",
+            "defaultValue": "10.3.1.0/24",
+            "metadata": {
+                "description": "description"
+            }
+        }
+        
+    },
+    "functions": [],
+    "variables": {
+        "sku_tier": "Standard"
+    },
+    "resources": [
+        {
+            "name": "[parameters('storageaccountname')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2021-04-01",
+            "tags": {
+                "displayName": "storageaccount1"
+            },
+            "location": "[parameters('location')]",
+            "kind": "StorageV2",
+            "sku": {
+                "name":"[parameters('sku')]" ,
+                "tier": "[variables('sku_tier')]"
+            }
+        },
+        {
+            "name": "[parameters('vnet_Name')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2020-11-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "virtualNetwork1"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('vnet_address_space')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "Subnet-1",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnet1')]"
+                        }
+                    },
+                    {
+                        "name": "Subnet-2",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnet2')]"
+                        }
+                    }
+                ]
+            }
+        }
+        
+    ],
+    
+    "outputs": {}
+}

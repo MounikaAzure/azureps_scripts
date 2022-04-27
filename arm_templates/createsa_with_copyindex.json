@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sa_name": {
+            "type": "string",
+            "defaultValue": "hdbfsxyz110",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "location_arr": {
+            "type": "string",
+            "defaultValue": "Central India",
+            "metadata": {
+                "description": "description"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[concat(parameters('sa_name'),copyIndex(8))]",
+            "copy": {
+                "name": "someCopy",
+                "count": 4,
+                "mode": "Serial",
+                "batchSize": 2
+            },
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2021-04-01",
+            "tags": {
+                "displayName": "storageaccount1"
+            },
+            "location": "Central India",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Premium_LRS",
+                "tier": "Premium"
+            }
+        }
+    ],
+    "outputs": {}
+}

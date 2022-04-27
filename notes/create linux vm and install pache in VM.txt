@@ -1,0 +1,6 @@
+
+104.43.139.19
+
+azureuser
+
+https://claytonshieldsjr.medium.com/create-a-linux-virtual-machine-web-server-in-azure-be3783fbdbc3

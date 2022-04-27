@@ -1,0 +1,12 @@
+Dev 2022	East US			RG
+dbsdev2025	West India		SA
+
+
+DBSVPN2025	East US			VPN		RG	Dev2022
+
+
+DBSVPN2026	West India			VPN		RG	Dev2022
+
+
+VPN and SA account location sould be same.
+RG location can be anywhere.

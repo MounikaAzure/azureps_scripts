@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Public_Ip_Address": {
+            "value": "devpublic_ip_address" 
+        },
+        "Domain_name": {
+            "value": "dnsname1234abc" 
+        },
+        "Network_Security_Group": {
+            "value": "devnsg" 
+        },
+        "vnet_name": {
+            "value": "devvnet" 
+        },
+        "subnet_name": {
+            "value": "devsubnet" 
+        },
+        "niccard_name": {
+            "value": "devnic" 
+        },
+        "VM_name": {
+            "value": "devvm2022" 
+        },
+        "vm_size": {
+            "value": "Standard_D4s_v3" 
+        },
+        "vnet_address_prefix": {
+            "value": "10.7.0.0/16" 
+        },
+        "subnet_address_prefix": {
+            "value": "10.7.0.0/24" 
+        }
+    }
+}

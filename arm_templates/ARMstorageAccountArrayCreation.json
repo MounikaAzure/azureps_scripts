@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageacc_name": {
+            "type": "array",
+            "defaultValue": [ "storagexydfdffdfdz", "storagexyz134", "storagexyz567" ],
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "location": {
+            "type": "array",
+            "defaultValue": [ "East US", "Central India", "West US" ],
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "Sku": {
+            "type": "string",
+            "defaultValue": "Standard_LRS",
+            "metadata": {
+                "description": "description"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {
+        "access_tier": "Standard"
+    },
+    "resources": [
+    
+         {
+            "name": "[parameters('storageacc_name')[copyIndex()]]",
+            "copy": {
+                "name": "storagename",
+                "count": "[length(parameters('storageacc_name'))]"
+            },
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2021-04-01",
+            "tags": {
+                "displayName": "storageaccount1"
+            },
+            "location": "[parameters('location')[copyIndex()]]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "[parameters('Sku')]",
+                "tier": "Premium"
+            }
+        }
+
+    ],
+    "outputs": {}
+}

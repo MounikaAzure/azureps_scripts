@@ -1,12 +1,12 @@
 {
    "rgName":"devRG",
    "rgLocation":"East US",
-   "saName":"uniquresaname",
+   "saName":"uniquresaname2022",
    "saLocation":"East US",
    "containers":[
       {
          "containername":"container1",
-         "permission":"off",
+         "permission":"Off",
          "blobs":[
             {
                "blobName":"rose.jsg",
@@ -20,14 +20,14 @@
       },
       {
          "containername":"container2",
-         "permission":"public",
+         "permission":"Blob",
          "blobs":[
             
          ]
       },
       {
          "containername":"container3",
-         "permission":"blob"
+         "permission":"Blob"
       }
    ]
 }

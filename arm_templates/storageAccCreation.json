@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "defaultValue":"Eastus",
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "sku": {
+            "defaultValue":"Standard_LRS",
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "storaccname": {
+            "defaultValue":"abcxyz2022",
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+{
+    "name": "[parameters('storaccname')]",
+    "type": "Microsoft.Storage/storageAccounts",
+    "apiVersion": "2021-04-01",
+    "tags": {
+        "displayName": "armstorage2022",
+        "createdBy":"Mounika"
+    },
+    "location": "[parameters('location')]",
+    "kind": "StorageV2",
+    "sku": {
+        "name": "[parameters('sku')]",
+        "tier": "Standard"
+    }
+}
+
+    ],
+    "outputs": {}
+}
